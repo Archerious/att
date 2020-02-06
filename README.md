@@ -1,8 +1,6 @@
 # BypassAttRG
-Using Asuswrt-Merlin to bypass AT&amp;T's residential gateway. (rt-ac68u <--> ~BGW210~ <--> ONT)  
-This method only requires Asuswrt-Merlin. No *pfSense*, or *netgraph*, or ubiquiti devices,  or dumb switch needed.  
-I only tested with rt-ac68u, but the method should work for all Asuswrt-Merlin based wireless routers (Please let me know if it doesn't).  
-Now, the home router connects optical network terminal(ONT) directly. You should setup the firewall wisely.
+
+This method works to rip the 802.1x keys from NVG589.
 
 <!-- **Background**: I switch to AT&T fiber and I hate AT&T residential gateway -->
 
