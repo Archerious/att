@@ -30,11 +30,7 @@ Credit: [nomotion](https://www.nomotion.net/blog/sharknatto/)
   [A complete bricking guide for Motorola/Arris NVG589.](https://github.com/MakiseKurisu/NVG589/wiki)
 - Otherwise, downgrade(upgrade) to [9.2.2h0d83](firmware/nvg589/spnvg589-9.2.2h0d83.bin).
 - Reset NVG589 and `ssh remotessh@192.168.1.254` (password:`5SaP9I26`)
-  - **If ssh is not enabled** at this time, upgrade to [9.2.2h4d16](firmware/nvg589/spnvg589-9.2.2h4d16.bin) with **ONT interface connected to AT&T's ONT**.
-  - Wait a bit, AT&T may start upgrade your NVG589's firmware. 
-	- At the time of this writing, it upgraded to [9.2.2h11d22](firmware/nvg589/spnvg589-9.2.2h11d22.bin).
-	- If not, manually upgrade to [9.2.2h11d22](firmware/nvg589/spnvg589-9.2.2h11d22.bin).
-  - When you see it is upgrading (power LED turns amber, and other LEDs are off), disconnect **ONT cable**.
+  - **If ssh is not enabled** at this time, upgrade to [9.2.2h4d16](firmware/nvg589/spnvg589-9.2.2h4d16.bin) 
   - Downgrade back to [9.2.2h0d83](firmware/nvg589/spnvg589-9.2.2h0d83.bin).
   - Now ssh should be enabled. **Please let me know if you find an easier and simpler method**.
 - In NVG589, run the following commands in order. (Credit: [samlii@dslreports](https://www.dslreports.com/forum/r32375916-))
